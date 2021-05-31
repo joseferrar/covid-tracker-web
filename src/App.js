@@ -1,10 +1,15 @@
-import logo from './logo.svg';
-import './App.css';
+import logo from "./logo.svg";
+import "./App.css";
+import { ThemeProvider } from "@material-ui/styles";
+import Navbar from "./components/Navbar/Navbar";
+import theme from "./theme/default";
 
 function App() {
   return (
     <div className="App">
-      <h1>hello</h1>
+      <ThemeProvider theme={theme}>
+        <Navbar />
+      </ThemeProvider>
     </div>
   );
 }
