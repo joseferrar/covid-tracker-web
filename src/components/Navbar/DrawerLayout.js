@@ -114,7 +114,7 @@ function DrawerLayout({ open, handleDrawerToggle, container }) {
         </NavLink>
 
         <NavLink
-          to={`/countries`}
+          to={`/country`}
           className="Nav_link"
           activeClassName="activeRoute"
           activeStyle={{ color: 'teal' }}

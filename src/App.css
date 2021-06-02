@@ -51,6 +51,9 @@
 .activeRoute {
   color: green !important;
 }
+.chart {
+  margin-top: 50px;
+}
 
 @keyframes App-logo-spin {
   from {
