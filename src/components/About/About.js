@@ -1,11 +1,14 @@
-import React from 'react'
+import React from "react";
+import { useLocation } from "react-router-dom";
 
 function About() {
-    return (
-        <div>
-            <h1>sdfdsf</h1>
-        </div>
-    )
+  const { state } = useLocation();
+  console.log(state);
+  return (
+    <div>
+      <h1>About</h1>
+    </div>
+  );
 }
 
-export default About
+export default About;
