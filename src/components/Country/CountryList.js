@@ -1,13 +1,13 @@
 import React from 'react'
 import { useLocation } from "react-router-dom";
+import CountryTable from './CountryTable';
 function CountryList() {
     const locations = useLocation()
-    console.log(locations)
+    // console.log(locations)
     const data = locations.state.item
     return (
         <div>
-            CountryList
-            <h1>{data.title}</h1>
+           <CountryTable data={data}/>
         </div>
     )
 }

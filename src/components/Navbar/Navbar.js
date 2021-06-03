@@ -1,17 +1,17 @@
 import React from "react";
 import Header from "./Header";
-import { Redirect, Route, Switch } from "react-router-dom";
+import { Route, Switch } from "react-router-dom";
 import Home from "../Home/Home";
 import About from "../About/About";
-import Container from "@material-ui/core/Container";
 import Country from "../Country/Country";
 import CountryList from "../Country/CountryList";
+import Layout from "./Layout";
 
 function Navbar() {
   return (
     <div>
-      <Header />
-      <Container maxWidth="md" fixed>
+      {/* <Header /> */}
+        <Layout>
         <Switch>
           <Route exact path="/" component={Home} />
           <Route exact path="/about" component={About} />
@@ -22,7 +22,7 @@ function Navbar() {
           <NoMatch />
         </Route> */}
         </Switch>
-      </Container>
+        </Layout>
     </div>
   );
 }

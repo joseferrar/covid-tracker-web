@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { makeStyles } from "@material-ui/core/styles";
-import Container from "@material-ui/core/Container";
 import Paper from "@material-ui/core/Paper";
 import Grid from "@material-ui/core/Grid";
 import Typography from "@material-ui/core/Typography";
@@ -20,21 +19,21 @@ const useStyles = makeStyles((theme) => ({
     width: theme.spacing(31),
     minHeight: theme.spacing(22),
     margin: theme.spacing(2),
-    backgroundColor: "#282829",
+
   },
   large: {
     width: theme.spacing(28),
     height: theme.spacing(15),
   },
   country: {
-    color: "#fff",
+    color: "#000",
     fontWeight: "bold",
     fontSize: 18,
     marginTop: theme.spacing(1),
     textDecoration: "none",
   },
   progress: {
-    backgroundColor: "#fff",
+    backgroundColor: "#000",
     marginTop: theme.spacing(1),
   },
 }));
