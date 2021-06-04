@@ -20,12 +20,7 @@ export default function Layout({ children }) {
 
   return (
     <div className={classes.root}>
-      {/* app bar */}
       <Header />
-      {/* side drawer */}
-      {/* <DrawerLayout /> */}
-
-      {/* main content */}
       <div className={classes.page}>{children}</div>
     </div>
   );

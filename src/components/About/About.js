@@ -6,7 +6,7 @@ function About() {
   console.log(state);
   return (
     <div>
-      <h1>About</h1>
+      <h1 style={{color: '#fff'}}>About</h1>
     </div>
   );
 }

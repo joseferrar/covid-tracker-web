@@ -14,9 +14,6 @@ export default createMuiTheme({
     secondary: {
       main: "#000",
     },
-    error: {
-      main: "#f44336",
-    },
   },
   typography: {
     h4: {

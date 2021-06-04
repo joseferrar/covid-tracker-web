@@ -12,6 +12,7 @@ import { CountryAction } from "../../actions";
 const useStyles = makeStyles((theme) => ({
   root: {
     flexGrow: 1,
+    marginTop: theme.spacing(1.5)
   },
   paper: {
     padding: theme.spacing(2),
@@ -42,7 +43,6 @@ function Country() {
   const classes = useStyles();
   const { data } = useSelector((state) => state.country);
   const dispatch = useDispatch();
-  console.log(data);
 
   useEffect(() => {
     dispatch(CountryAction());
@@ -50,14 +50,14 @@ function Country() {
 
   return (
     <div className={classes.root}>
-      <h1>country</h1>
+ 
       <Grid container spacing={3}>
-        {data.map((item, index) => (
+        {data && data.map((item, index) => (
           <div key={index}>
             <Link
             className={classes.country}
               to={{
-                pathname: `/country/${item.country}`,
+                pathname: `/country/${item?.country}`,
                 state: {
                   item,
                   name: "dsfdsf",
@@ -67,16 +67,16 @@ function Country() {
               <Grid item xs={3}>
                 <Paper className={classes.paper}>
                   <Avatar
-                    src={item.countryInfo.flag}
+                    src={item?.countryInfo?.flag}
                     className={classes.large}
                     variant="square"
                   />
                   <Typography className={classes.country}>
-                    {item.country}
+                    {item?.country}
                   </Typography>
                   <LinearProgress
                     variant="determinate"
-                    value={item.active}
+                    value={item?.active}
                     className={classes.progress}
                     color="primary"
                   />

@@ -40,7 +40,8 @@ const useStyles = makeStyles((theme) => ({
   toolbar: theme.mixins.toolbar,
   drawerPaper: {
     width: drawerWidth,
-    backgroundImage: `url(${"https://images3.alphacoders.com/100/1006696.png"})`,
+    // backgroundImage: `url(${"https://images3.alphacoders.com/100/1006696.png"})`,
+    background: "linear-gradient(45deg, #f53844 30%, #42378f 90%)",
   },
   content: {
     flexGrow: 1,
@@ -93,6 +94,11 @@ function DrawerLayout({ open, seOpen, handleDrawerToggle, container }) {
       text: "Country",
       icon: <i class="fas fa-globe"></i>,
       path: "/country",
+    },
+    {
+      text: "Vaccine",
+      icon: <i class="fas fa-briefcase-medical"></i>,
+      path: "/vaccine",
     },
   ];
 
