@@ -191,7 +191,7 @@ export default function PrimarySearchAppBar(props) {
             <MenuIcon />
           </IconButton>
           <Typography className={classes.search} variant="h6" noWrap align="center">
-            Material-UI
+            COVID-19
           </Typography>
       
           <div className={classes.grow} />

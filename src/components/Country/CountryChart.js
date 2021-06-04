@@ -1,15 +1,8 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import { Line } from "react-chartjs-2";
-import { useSelector, useDispatch } from "react-redux";
-import { All_Cases } from '../../actions'
 
-function Home() {
-  const { data } = useSelector((state) => state.home);
-  const dispatch = useDispatch();
-
-  useEffect(() => {
-    dispatch(All_Cases());
-  }, [dispatch]);
+function CountryChart(props) {
+  const { data } = props;
 
   const chart = {
     labels: ["Active", "Cases", "tests", "population", "deaths"],
@@ -41,9 +34,9 @@ function Home() {
 
   return (
     <div className="chart">
-      <Line data={chart} />
+      <Line data={chart} height={100}/>
     </div>
   );
 }
 
-export default Home;
+export default CountryChart;
