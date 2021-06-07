@@ -3,6 +3,7 @@ import {
     FETCH_VACCINE_SUCCESS,
     FETCH_VACCINE_ERROR,
   } from "../constants/type";
+  
   const initialValues = {
     loading: false,
     data: {},

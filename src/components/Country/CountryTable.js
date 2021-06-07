@@ -45,7 +45,7 @@ function CountryTable(props) {
   const classes = useStyles();
   const { data } = props;
   const nf = Intl.NumberFormat();
-  console.log(data);
+
   return (
     <div className={classes.root}>
       <Grid container spacing={0}>
