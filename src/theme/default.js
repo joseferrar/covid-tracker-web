@@ -15,9 +15,4 @@ export default createMuiTheme({
       main: "#000",
     },
   },
-  typography: {
-    h4: {
-      fontWeight: 300,
-    },
-  },
 });

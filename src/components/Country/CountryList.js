@@ -45,7 +45,6 @@ const useStyles = makeStyles((theme) => ({
 function CountryList() {
   const classes = useStyles();
   const locations = useLocation();
-  // console.log(locations)
   const data = locations.state.item;
   return (
     <div className={classes.root}>
