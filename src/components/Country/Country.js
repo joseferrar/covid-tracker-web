@@ -8,11 +8,11 @@ import LinearProgress from "@material-ui/core/LinearProgress";
 import { Avatar } from "@material-ui/core";
 import { useSelector, useDispatch } from "react-redux";
 import { CountryAction } from "../../actions";
-
+import { Spinner } from "../../util/Spinner";
 const useStyles = makeStyles((theme) => ({
   root: {
     flexGrow: 1,
-    marginTop: theme.spacing(1.5)
+    marginTop: theme.spacing(1.5),
   },
   paper: {
     padding: theme.spacing(2),
@@ -20,7 +20,6 @@ const useStyles = makeStyles((theme) => ({
     width: theme.spacing(31),
     minHeight: theme.spacing(22),
     margin: theme.spacing(2),
-
   },
   large: {
     width: theme.spacing(28),
@@ -41,7 +40,7 @@ const useStyles = makeStyles((theme) => ({
 
 function Country() {
   const classes = useStyles();
-  const { data } = useSelector((state) => state.country);
+  const { loading, data } = useSelector((state) => state.country);
   const dispatch = useDispatch();
 
   useEffect(() => {
@@ -50,41 +49,42 @@ function Country() {
 
   return (
     <div className={classes.root}>
- 
+      {loading ? Spinner() : null}
       <Grid container spacing={3}>
-        {data && data.map((item, index) => (
-          <div key={index}>
-            <Link
-            className={classes.country}
-              to={{
-                pathname: `/country/${item?.country}`,
-                state: {
-                  item,
-                  name: "dsfdsf",
-                },
-              }}
-            >
-              <Grid item xs={3}>
-                <Paper className={classes.paper}>
-                  <Avatar
-                    src={item?.countryInfo?.flag}
-                    className={classes.large}
-                    variant="square"
-                  />
-                  <Typography className={classes.country}>
-                    {item?.country}
-                  </Typography>
-                  <LinearProgress
-                    variant="determinate"
-                    value={item?.active}
-                    className={classes.progress}
-                    color="primary"
-                  />
-                </Paper>
-              </Grid>
-            </Link>
-          </div>
-        ))}
+        {data &&
+          data.map((item, index) => (
+            <div key={index}>
+              <Link
+                className={classes.country}
+                to={{
+                  pathname: `/country/${item?.country}`,
+                  state: {
+                    item,
+                    name: "dsfdsf",
+                  },
+                }}
+              >
+                <Grid item xs={3}>
+                  <Paper className={classes.paper}>
+                    <Avatar
+                      src={item?.countryInfo?.flag}
+                      className={classes.large}
+                      variant="square"
+                    />
+                    <Typography className={classes.country}>
+                      {item?.country}
+                    </Typography>
+                    <LinearProgress
+                      variant="determinate"
+                      value={item?.active}
+                      className={classes.progress}
+                      color="primary"
+                    />
+                  </Paper>
+                </Grid>
+              </Link>
+            </div>
+          ))}
       </Grid>
     </div>
   );

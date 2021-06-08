@@ -9,6 +9,7 @@ import { Avatar } from "@material-ui/core";
 import logo from "../../assets/images/vaccine.jpg";
 import { useSelector, useDispatch } from "react-redux";
 import { VaccineAction } from "../../actions";
+import { Spinner } from "../../util/Spinner";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -51,6 +52,7 @@ function Vaccine() {
   //   console.log(data);
   return (
     <div className={classes.root}>
+      {loading ? Spinner() : null}
       <Grid container spacing={3}>
         {data &&
           data?.phases?.map((item, index) => (
