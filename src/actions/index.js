@@ -8,7 +8,7 @@ import {
   FETCH_COUNTRY_ERROR,
   FETCH_VACCINE_REQUEST,
   FETCH_VACCINE_SUCCESS,
-  FETCH_VACCINE_ERROR
+  FETCH_VACCINE_ERROR,
 } from "../constants/type";
 import axios from "axios";
 
@@ -56,7 +56,6 @@ export const CountryAction = () => {
   };
 };
 
-
 export const VaccineAction = () => {
   return (dispatch) => {
     dispatch({
@@ -78,4 +77,3 @@ export const VaccineAction = () => {
       });
   };
 };
-

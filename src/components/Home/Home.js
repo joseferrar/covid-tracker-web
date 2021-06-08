@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from "react";
 import { Line } from "react-chartjs-2";
 import { useSelector, useDispatch } from "react-redux";
-import { All_Cases } from '../../actions'
-
+import { All_Cases } from "../../actions";
+import { Spinner } from "../../util/Spinner";
 function Home() {
-  const { data } = useSelector((state) => state.home);
+  const { loading, data } = useSelector((state) => state.home);
   const dispatch = useDispatch();
 
   useEffect(() => {
@@ -41,6 +41,7 @@ function Home() {
 
   return (
     <div className="chart">
+      {loading ? Spinner() : null}
       <Line data={chart} />
     </div>
   );
